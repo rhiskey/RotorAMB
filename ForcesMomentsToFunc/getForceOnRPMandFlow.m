@@ -36,6 +36,7 @@ if flag ~= 0
     end
     grid on
     hold off
+    ForceOrMoment = fitresult;
 end
 
 
