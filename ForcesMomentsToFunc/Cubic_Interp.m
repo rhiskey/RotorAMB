@@ -1,4 +1,4 @@
-function [fitresult, gof] = Cubic_Interp(X, Y, F_tr)
+function [fitresult, gof] = Cubic_Interp(X, Y, F_tr, ForM)
 %CREATEFIT1(X,Y,F_TR)
 %  Create a fit.
 %
@@ -32,7 +32,11 @@ legend( h, 'Cubic_Interp', 'F  vs. Q, RPM', 'Location', 'NorthEast', 'Interprete
 % Label axes
 xlabel( 'Q, л/мин', 'Interpreter', 'none' );
 ylabel( 'RPM', 'Interpreter', 'none' );
-zlabel( 'F, Н', 'Interpreter', 'none' );
+if ForM == 0
+    zlabel( 'F, Н', 'Interpreter', 'none' );
+else
+    zlabel( 'M, Н*m', 'Interpreter', 'none' );
+end
 grid on
 view( -9.8, 17.4 );
 
